@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Website</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="img/logo.png" alt="Logo">
+            </div>
+            <ul>
+                <li><a href="#" class="active"><img src="img/distance.png" alt="Icon1"> การเดินทาง</a></li>
+                <li><a href="#"><img src="img/box.png" alt="Icon2"> การขนส่ง</a></li>
+                <li><a href="#"><img src="img/badge-discount-alt.png" alt="Icon3"> โปรโมชั่น</a></li>
+                <li><a href="#"><img src="img/flag.png" alt="Icon4"> แพ็กเกจทัวร์</a></li>
+                <li><a href="#"><img src="img/verified.png" alt="Icon5"> ประกันการเดินทาง</a></li>
+                <li><a href="#"><img src="img/bus-ticket.png" alt="Icon6"> การจองของฉัน</a></li>
+            </ul>
+            <div class="user-profile">
+                <span>jons@email.com</span>
+                <img src="img/user.png" alt="User">
+                <span class="lang">EN</span>
+                <span class="lang">TH</span>
+                <div class="menu-icon">☰</div>
+            </div>
+        </nav>
+        <div class="notification-bar">
+            <span>ลงทะเบียน เพื่อรับสิทธิประโยชน์พิเศษอื่นๆมากมาย</span>
+            <button class="close-btn">&times;</button>
+        </div>
+    </header>
+
+    <section class="slider-section">
+        <div class="slider-container">
+            <div class="slider">
+                <div class="slide"><img src="img/hero.png" alt="Slide 1"></div>
+                <div class="slide"><img src="img/hero.png" alt="Slide 2"></div>
+                <div class="slide"><img src="img/hero.png" alt="Slide 3"></div>
+            </div>
+            <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+            <button class="next" onclick="moveSlide(1)">&#10095;</button>
+            <div class="search-overlay">
+                <h1>“ความงดงามของ การเดินทาง คือเรื่องราวระหว่างทาง”</h1>
+                <div class="search-container">
+                    <div class="search-options">
+                        <label class="custom-dropdown">
+                            <select name="travel-type" id="travel-type">
+                                <option value="bus">รถบัส</option>
+                                <option value="train">รถไฟ</option>
+                                <option value="flight">เที่ยวบิน</option>
+                            </select>
+                            <span class="icon-text">
+                                <img src="img/bus_icon.png" alt="Bus Icon">
+                                <span>รถบัส</span>
+                            </span>
+                            <span>
+                                <img src="img/Group.png" style="text-align: center;" alt="Logo">
+                            </span>
+                        </label>
+                        <div class="custom-trip">
+                            <label>
+                                <input type="radio" name="trip-type" value="round-trip" checked>
+                                <span class="radio-label">ไป-กลับ</span>
+                                <span class="checkmark"></span>
+                            </label>
+                            <label>
+                                <input type="radio" name="trip-type" value="one-way">
+                                <span class="radio-label">เที่ยวเดียว</span>
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                        <label class="custom-dropdown">
+                            <select name="travel-type" id="travel-type">
+                                <option value="bus">รถบัส</option>
+                                <option value="train">รถไฟ</option>
+                                <option value="flight">เที่ยวบิน</option>
+                            </select>
+                            <span class="icon-text">
+                                <span>เที่ยวเดียว</span>
+                            </span>
+                            <span>
+                                <img src="img/Group.png" style="text-align: center;" alt="Logo">
+                            </span>
+                        </label>
+                    </div>
+                    <div class="search-fields">
+                        <div class="field-group">
+                            <label for="from" class="search-lable-text">จาก</label>
+                            <input type="text" id="from" class="search-input" value="เชียงใหม่">
+                            <small class="search-small-text">สถานีขนส่ง เชียงใหม่</small>
+                        </div>
+                        <div class="swap-icon">
+                            <img src="img/swap.png" style="text-align: center; padding-top: 5px;" alt="Logo">
+                        </div>
+                        <div class="field-group" style="margin-left:unset">
+                            <label for="to" class="search-lable-text">ถึง</label>
+                            <input type="text" id="to" class="search-input" value="เชียงราย">
+                            <small class="search-small-text">สถานีขนส่ง เชียงราย</small>
+                        </div>
+                        <div class="field-group">
+                            <label for="departure-date" class="search-lable-text">วันเดินทางไป</label>
+                            <input type="date" id="departure-date" class="search-input">
+                            <small class="search-small-text">22 ส.ค. 2021</small>
+                        </div>
+                        <div class="field-group">
+                            <label for="return-date" class="search-lable-text">วันเดินทางกลับ</label>
+                            <input type="date" id="return-date" class="search-input">
+                            <small class="search-small-text">25 ส.ค. 2021</small>
+                        </div>
+                        <div>
+                            <button class="search-button">ค้นหา</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="travel-options">
+        <div class="section-header">
+            <h2 style="text-align: left;">การเดินทาง</h2>
+            <button class="see-more-button">see m<span><img src="img/point.png" alt="Location Icon"></span>re</button>
+        </div>
+
+        <div class="travel-cards">
+            <div class="travel-card">
+                <img src="img/travel1.png" alt="Travel 1">
+                <div class="travel-card-content">
+                    <h3>แม่แตง - ออมอล</h3>
+                    <p>เที่ยวเดียว</p>
+                    <p>รายละเอียด: แม่แตง - ปาย - เชียงใหม่</p>
+                    <p>ราคา: ฿75</p>
+                    <p>วันที่: 1 ม.ค. 2022 - 31 ธ.ค. 2022</p>
+                    <button class="book-button">จองตอนนี้</button>
+                </div>
+            </div>
+            <div class="travel-card">
+                <img src="img/travel2.png" alt="Travel 2">
+                <div class="travel-card-content">
+                    <h3>เชียงใหม่ - เชียงราย</h3>
+                    <p>เที่ยวเดียว</p>
+                    <p>รายละเอียด: เชียงใหม่ - แม่สาย</p>
+                    <p>ราคา: ฿448</p>
+                    <p>วันที่: 1 ม.ค. 2022 - 31 ธ.ค. 2022</p>
+                    <button class="book-button">จองตอนนี้</button>
+                </div>
+            </div>
+            <div class="travel-card">
+                <img src="img/travel3.png" alt="Travel 3">
+                <div class="travel-card-content">
+                    <h3>เชียงใหม่ - ลำปาง</h3>
+                    <p>เที่ยวเดียว</p>
+                    <p>รายละเอียด: เชียงใหม่ - ลำพูน</p>
+                    <p>ราคา: ฿160</p>
+                    <p>วันที่: 1 ม.ค. 2022 - 31 ธ.ค. 2022</p>
+                    <button class="book-button">จองตอนนี้</button>
+                </div>
+            </div>
+            <div class="travel-card">
+                <img src="img/travel4.png" alt="Travel 4">
+                <div class="travel-card-content">
+                    <h3>ออมอล - เชียงราย</h3>
+                    <p>เที่ยวเดียว</p>
+                    <p>รายละเอียด: ออมอล - เชียงราย</p>
+                    <p>ราคา: ฿145</p>
+                    <p>วันที่: 1 ม.ค. 2022 - 31 ธ.ค. 2022</p>
+                    <button class="book-button">จองตอนนี้</button>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <section class="package-tours">
+       
+        <div class="section-header">
+            <h2 style="text-align: left;">PACKAGE TOURS</h2>
+            <button class="see-more-button">see m<span><img src="img/point.png" alt="Location Icon"></span>re</button>
+        </div>
+
+        <div class="package-cards">
+            <div class="package-card">
+                <img src="img/japan.png" alt="Package 1">
+                <div class="package-card-content">
+                    <h3>FUKUOKA KUMAMOTO BEPPU 5D3N</h3>
+                    <p>เที่ยวเต็ม ไม่มีฟรีเดย์</p>
+                    <p>Tour code: PJP71-VZ</p>
+                    <p>Airline: Thai Vietjet</p>
+                    <p>Tour: Japan</p>
+                    <p>Available on: 1 Jan 2021 - 31 Dec 2021</p>
+                    <p class="package-price">฿ 23,999 / Person</p>
+                    <button class="book-button">จองตอนนี้</button>
+                </div>
+            </div>
+            <div class="package-card">
+                <img src="img/japan.png" alt="Package 2">
+                <div class="package-card-content">
+                    <h3>FUKUOKA KUMAMOTO BEPPU 5D3N</h3>
+                    <p>เที่ยวเต็ม ไม่มีฟรีเดย์</p>
+                    <p>Tour code: PJP71-VZ</p>
+                    <p>Airline: Thai Vietjet</p>
+                    <p>Tour: Japan</p>
+                    <p>Available on: 1 Jan 2021 - 31 Dec 2021</p>
+                    <p class="package-price">฿ 23,999 / Person</p>
+                    <button class="book-button">จองตอนนี้</button>
+                </div>
+            </div>
+            <div class="package-card">
+                <img src="img/japan.png" alt="Package 3">
+                <div class="package-card-content">
+                    <h3>FUKUOKA KUMAMOTO BEPPU 5D3N</h3>
+                    <p>เที่ยวเต็ม ไม่มีฟรีเดย์</p>
+                    <p>Tour code: PJP71-VZ</p>
+                    <p>Airline: Thai Vietjet</p>
+                    <p>Tour: Japan</p>
+                    <p>Available on: 1 Jan 2021 - 31 Dec 2021</p>
+                    <p class="package-price">฿ 23,999 / Person</p>
+                    <button class="book-button">จองตอนนี้</button>
+                </div>
+            </div>
+            <div class="package-card">
+                <img src="img/japan.png" alt="Package 4">
+                <div class="package-card-content">
+                    <h3>FUKUOKA KUMAMOTO BEPPU 5D3N</h3>
+                    <p>เที่ยวเต็ม ไม่มีฟรีเดย์</p>
+                    <p>Tour code: PJP71-VZ</p>
+                    <p>Airline: Thai Vietjet</p>
+                    <p>Tour: Japan</p>
+                    <p>Available on: 1 Jan 2021 - 31 Dec 2021</p>
+                    <p class="package-price">฿ 23,999 / Person</p>
+                    <button class="book-button">จองตอนนี้</button>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <section class="search-bar">
+        <div class="search-container-p">
+            <div class="search-box">
+                <img src="img/search_icon.png" alt="Search Icon" class="search-icon">
+                <input type="text" placeholder="ค้นหาจากชื่อประเทศ/เมือง (ภาษาอังกฤษ) หรือรหัสทัวร์">
+            </div>
+            <div class="date-box">
+                <label for="start-date">ตั้งแต่</label>
+                <input type="date" id="start-date" value="2025-08-22">
+                <span class="date-text">22 ส.ค. 2025<br>วันเสาร์</span>
+            </div>
+            <div class="date-box">
+                <label for="end-date">ถึง</label>
+                <input type="date" id="end-date" value="2025-08-25">
+                <span class="date-text">25 ส.ค. 2025<br>วันพุธ</span>
+            </div>
+            <button class="search-button">ค้นหา</button>
+        </div>
+    </section>
+    <section class="tour-details">
+        <div class="tour-container">
+            <div class="tour-image">
+                <img src="img/japan.png" alt="Tour Image">
+            </div>
+            <div class="tour-info">
+                <div class="tour-title">
+                    <img src="img/Layer2.png" alt="Icon" class="title-icon">
+                    <h2>FUKUOKA KUMAMOTO BEPPU 5D3N (เที่ยวเต็ม ไม่มีฟรีเดย์)</h2>
+                </div>
+                <p>รหัสทัวร์: PJP71-VZ</p>
+                <p>สายการบิน: Thai Vietjet</p>
+                <p>ทัวร์: ญี่ปุ่น</p>
+                <p>ช่วงเวลา: ม.ค. - ต.ค. 67</p>
+                <h3>Highlight Tour</h3>
+                <ul>
+                    <li>DAY 1: กรุงเทพฯ สนามบินสุวรรณภูมิ</li>
+                    <li>DAY 2: สนามบินฟุกุโอกะ -> ศาลเจ้าดาไซฟุ-หมู่บ้านยูฟุอิน</li>
+                    <li>DAY 3: อูมิจิโกะ-บีปปุ-ทะเลสาบคินริน-KUJY-ภูเขาคุนุจากุเกชระ-AEON MALL</li>
+                    <li>DAY 4: ไทลู ฟรีช๊อปพิศาภัย-ซากะฮิล-แผ่นฟูกูโอกะ-DUTY FREE-บ้านช้อปปิ้งในแห่สิน</li>
+                    <li>DAY 5: สนามบินฟุกุโอกะ-กรุงเทพฯ สนามบินสุวรรณภูมิ</li>
+                </ul>
+                <div class="tour-buttons">
+                    <button class="download-button">
+                        <img src="img/pdf_icon.png" alt="PDF Icon"> 
+                        ดาวน์โหลดรายละเอียด PDF
+                    </button>
+                    <button class="show-period-button">▼ SHOW PERIOD</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="tour-schedule">
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>กำหนดการเดินทาง</th>
+                        <th>สถานะ</th>
+                        <th>ราคาผู้ใหญ่ / เด็ก</th>
+                        <th>พักเดี่ยวเพิ่ม</th>
+                        <th>ที่นั่งคงเหลือ (จาก)</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>03/05/2024 - 07/05/2024</td>
+                        <td>เต็ม</td>
+                        <td>33,999</td>
+                        <td>6,900</td>
+                        <td>0 (37)</td>
+                        <td><button class="status-button full">เต็ม</button></td>
+                    </tr>
+                    <tr>
+                        <td>03/05/2024 - 07/05/2024</td>
+                        <td>เต็ม</td>
+                        <td>33,999</td>
+                        <td>6,900</td>
+                        <td>0 (37)</td>
+                        <td><button class="status-button full">เต็ม</button></td>
+                    </tr>
+                    <tr>
+                        <td>03/05/2024 - 07/05/2024</td>
+                        <td>เปิดจอง</td>
+                        <td>33,999</td>
+                        <td>6,900</td>
+                        <td>37 (37)</td>
+                        <td><button class="status-button available">จอง</button></td>
+                    </tr>
+                    <tr>
+                        <td>03/05/2024 - 07/05/2024</td>
+                        <td>เปิดจอง</td>
+                        <td>33,999</td>
+                        <td>6,900</td>
+                        <td>37 (37)</td>
+                        <td><button class="status-button available">จอง</button></td>
+                    </tr>
+                    <tr>
+                        <td>03/05/2024 - 07/05/2024</td>
+                        <td>เปิดจอง</td>
+                        <td>33,999</td>
+                        <td>6,900</td>
+                        <td>37 (37)</td>
+                        <td><button class="status-button available">จอง</button></td>
+                    </tr>
+                    <tr>
+                        <td>03/05/2024 - 07/05/2024</td>
+                        <td>เปิดจอง</td>
+                        <td>33,999</td>
+                        <td>6,900</td>
+                        <td>37 (37)</td>
+                        <td><button class="status-button available">จอง</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <section class="partners-section">
+        <div class="section-header">
+            <h2>OUR PARTNERS</h2>
+        </div>
+        <div class="partners-line">
+            <img src="img/dotted_line.png" alt="Location Icon">
+          
+        </div>
+        <div class="partners-logos">
+            <img src="img/amadeus_logo.png" alt="Amadeus">
+            <img src="img/kiwi_logo.png" alt="Kiwi.com">
+            <img src="img/greenbus_logo.png" alt="Greenbus">
+            <img src="img/thai_logo.png" alt="Thai">
+            <img src="img/asap_logo.png" alt="ASAP">
+            <div class="chat-options">
+              
+                <img src="img/chat.png" alt="Chat Icon">
+                
+            </div>
+        </div>
+        
+    </section>
+    <footer class="footer-section">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <img src="img/ff.png" alt="FairFair Logo">
+                <p>© 2021 All Rights Reserved.</p>
+            </div>
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h4 class="footer-heading">About</h4>
+                    <ul>
+                        <li><a href="#">How to book</a></li>
+                        <li><a href="#">Contact us</a></li>
+                        <li><a href="#">Help center</a></li>
+                        <li><a href="#">About us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-heading">Services</h4>
+                    <ul>
+                        <li><a href="#">Flights</a></li>
+                        <li><a href="#">Bus</a></li>
+                        <li><a href="#">Rent Cars</a></li>
+                        <li><a href="#">Package Tours</a></li>
+                        <li><a href="#">Travel Insurance</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-heading">Other</h4>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of use</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-social">
+                <h4>Follow us</h4>
+                <div class="social-icons">
+                    <a href="#"><img src="img/facebook.png" alt="Facebook"></a>
+                    <a href="#"><img src="img/instagram.png" alt="Instagram"></a>
+                    <a href="#"><img src="img/x.png" alt="Twitter"></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Modal Form -->
+    <div class="modal" id="bookingModal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>FUKUOKA KUMAMOTO BEPPU 5D3N (เที่ยวเต็ม ไม่มีฟรีเดย์)</h2>
+            <p><strong>Tour code:</strong> PJP71-VZ</p>
+            <p><strong>Series Name:</strong> FUKUOKA KUMAMOTO BEPPU 5D3N (เที่ยวเต็ม ไม่มีฟรีเดย์)</p>
+            <p><strong>Period:</strong> 03/05/2024 - 07/05/2024</p>
+            <h3>ข้อมูลติดต่อผู้จอง</h3>
+            <form action="">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="first-name">ชื่อ</label>
+                        <input type="text" id="first-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="last-name">นามสกุล</label>
+                        <input type="text" id="last-name" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="email">อีเมล</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">เบอร์โทรติดต่อ</label>
+                        <input type="text" id="phone" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="travelers">จำนวนผู้เดินทาง</label>
+                        <select id="travelers" required>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="submit-button-container">
+                    <button type="submit" class="submit-button">จอง</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
